@@ -1,26 +1,11 @@
-const db = [
-    {
-        id: "1",
-        name: "Picachu1"
-    },
-    {
-        id: "2",
-        name: "Picachu2"
-    },
-    {
-        id: "3",
-        name: "Picachu3"
-    },
-    {
-        id: "4",
-        name: "Picachu4"
-    },
-    {
-        id: "5",
-        name: "Picachu5"
-    },
-]
+const PokemonModel = require('../../model/mongoose-models/Pokemon')
 
-module.exports.getById = (req, res) => {
-    res.send(db.find(pokemon => req.params.id == pokemon.id))
+module.exports.getById = async(req, res) => {
+    res.send(await PokemonModel.findById(req.params.id))
+}
+module.exports.getAll = async (req, res)  => {
+    res.send(await PokemonModel.find({}))
+}
+module.exports.getByName = async (req, res)  => {
+    res.send(await PokemonModel.find({name:req.params.name}))
 }

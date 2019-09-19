@@ -1,3 +1,8 @@
+//dot env instantiate
+require('dotenv').config()
+//mongoose instantiate
+require('./model/moongose')
+
 const config = require('./config/serverConfig')
 const app = config.setUpServer()
 
