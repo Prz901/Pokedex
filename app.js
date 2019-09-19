@@ -1,4 +1,3 @@
-
 const config = require('./config/serverConfig')
 const app = config.setUpServer()
 
